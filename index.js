@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
 
             let digits = currentValue.substring(prefix.length).replace(/\D/g, '');
-            digits = digits.substring(0, 10); // Limit to 10 digits after +94
+            digits = digits.substring(0, 9); // Limit to 9 digits after +94
 
             // Format the remaining digits with spaces: XX XXX XXXX (10 digits)
             let formattedDigits = '';
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 formattedDigits += ' ' + digits.substring(2, 5);
             }
             if (digits.length > 5) {
-                formattedDigits += ' ' + digits.substring(5, 10);
+                formattedDigits += ' ' + digits.substring(5, 9);
             }
             
             e.target.value = prefix + formattedDigits;
@@ -158,7 +158,7 @@ function validateBrokerForm(form) {
 
     const cleanContactNo = contactNo.replace(/\s/g, ''); // remove spaces for length check
     if (cleanContactNo.length !== 12 || !contactNo.startsWith('+94 ')) { 
-        showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 10 digits (e.g., +94 7X XXX XXXX).', true);
+        showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 9 digits (e.g., +94 7X XXX XXXX).', true);
         return false;
     }
 
@@ -220,7 +220,7 @@ function validateRequirementForm(form) {
 
     const cleanWhatsapp = whatsapp.replace(/\s/g, '');
     if (cleanWhatsapp.length !== 12 || !whatsapp.startsWith('+94 ')) { 
-        showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 10 digits (e.g., +94 7X XXX XXXX).', true);
+        showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 9 digits (e.g., +94 7X XXX XXXX).', true);
         return false;
     }
     
