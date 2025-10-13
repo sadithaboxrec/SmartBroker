@@ -185,8 +185,8 @@ body, html {
 }
 
 .footer-section img {
-    width: 44px;
-    height: 44px;
+    width: 80px;
+    height: 80px;
     border-radius: 8px;
     background: var(--text-light);
     margin-right: 12px;
@@ -402,19 +402,24 @@ body, html {
     }
 
     .footer {
-        position: absolute;
+        position: static;
         left: 0;
-        bottom: -200px; /* Push footer way down */
+        bottom: 0;
         width: 100vw;
         flex-direction: column;
         gap: 8px;
-        padding: 18px 10px;
+        /* padding: 18px 10px; */
         font-size: 1em;
+        margin-top: -1px;
         margin-bottom: 0;
         z-index: 10;
     }
 
-    .footer-section img,
+    .footer-section img{
+        width: 48px;
+        height: 48px;
+    }
+
     .footer-section .footer-icon {
         width: 24px;
         height: 24px;
