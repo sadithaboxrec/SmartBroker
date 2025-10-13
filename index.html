@@ -65,12 +65,19 @@
 <!-- Join as Broker Modal -->
 <div class="modal-overlay" id="brokerFormModal" onclick="closeOnOutsideClick(event)">
     <div class="modal-container">
-        <h3>Join as Broker</h3>
-        <!-- Registration Message -->
+
+        <h3>
+            <button class="modal-back-btn" onclick="closeModal('brokerFormModal')" aria-label="Back to previous page">
+                  <i class="fa-solid fa-arrow-left"></i>
+             </button>
+            Join as Broker
+        </h3>
+
         <p class="registration-info"> <b>
             You can submit your bio data here. One of our agents will contact you 
             soon through the <i>WhatsApp number</i> you added. A registration fee of Rs 590 applies.
         </b></p>
+
         <form onsubmit="return validateBrokerForm(this)" class="app-form">
 
             <label for="broker-name">Name</label>
@@ -130,7 +137,13 @@
 <!-- Post Requirement Modal -->
 <div class="modal-overlay" id="requirementFormModal" onclick="closeOnOutsideClick(event)">
     <div class="modal-container">
-        <h3>Add Your Requirement Here</h3>
+
+        <h3>
+            <button class="modal-back-btn" onclick="closeModal('requirementFormModal')" aria-label="Back to previous page">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            Add Your Requirement
+        </h3>
         <form onsubmit="return validateRequirementForm(this)" class="app-form">
             <label for="req-name">Your Full Name</label>
             <input type="text" id="req-name" name="name" placeholder="Your Name" required>

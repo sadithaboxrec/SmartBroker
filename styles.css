@@ -599,6 +599,31 @@ body, html {
     to { transform: translateY(0); opacity: 1; }
 }
 
+/* Style for the back button */
+.modal-container h3 {
+    position: relative;
+    padding-left: 35px; 
+}
+
+.modal-back-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; 
+    color: red; 
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.modal-back-btn:hover {
+    color: #007bff; 
+}
+
 
 /* Mobile Responsiveness of forms */
 @media (max-width: 600px) {
