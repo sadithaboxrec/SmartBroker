@@ -62,6 +62,100 @@
 
 
 
+<!-- Join as Broker Modal -->
+<div class="modal-overlay" id="brokerFormModal" onclick="closeOnOutsideClick(event)">
+    <div class="modal-container">
+        <h3>Join as Broker</h3>
+        <!-- Registration Message -->
+        <p class="registration-info"> <b>
+            You can submit your bio data here. One of our agents will contact you 
+            soon through the <i>WhatsApp number</i> you added. A registration fee of Rs 590 applies.
+        </b></p>
+        <form onsubmit="return validateBrokerForm(this)" class="app-form">
+
+            <label for="broker-name">Name</label>
+            <input type="text" id="broker-name" name="name" placeholder="Your Name" required>
+
+            <label for="broker-nic">National ID Number</label>
+            <input type="text" id="broker-nic" name="id_number" pattern="[0-9]{9}[vVxX]|[0-9]{12}" title="Enter 9 digits followed by V or X, or 12 digits" placeholder="National Id" required>
+
+            <label for="broker-email">Email</label>
+            <input type="email" id="broker-email" name="email" placeholder="youremail@mail.com" >
+
+            <label for="broker-whatsapp">Contact No (WhatsApp preferred, e.g., +94 7x xxx xxxx)</label>
+            <input type="tel" id="broker-whatsapp" name="contact_no" placeholder="+94 7x xxx xxxx" autocomplete="off" required>
+
+            <label for="broker-district">District</label>
+            <select id="broker-district" name="district" required>
+                <option value="">-- Select District --</option>
+                <option value="Ampara">Ampara</option>
+                <option value="Anuradhapura">Anuradhapura</option>
+                <option value="Badulla">Badulla</option>
+                <option value="Batticaloa">Batticaloa</option>
+                <option value="Colombo">Colombo</option>
+                <option value="Galle">Galle</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Hambantota">Hambantota</option>
+                <option value="Jaffna">Jaffna</option>
+                <option value="Kalutara">Kalutara</option>
+                <option value="Kandy">Kandy</option>
+                <option value="Kegalle">Kegalle</option>
+                <option value="Kilinochchi">Kilinochchi</option>
+                <option value="Kurunegala">Kurunegala</option>
+                <option value="Mannar">Mannar</option>
+                <option value="Matale">Matale</option>
+                <option value="Matara">Matara</option>
+                <option value="Monaragala">Monaragala</option>
+                <option value="Mullaitivu">Mullaitivu</option>
+                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                <option value="Polonnaruwa">Polonnaruwa</option>
+                <option value="Puttalam">Puttalam</option>
+                <option value="Ratnapura">Ratnapura</option>
+                <option value="Trincomalee">Trincomalee</option>
+                <option value="Vavuniya">Vavuniya</option>
+            </select>
+
+            <label for="broker-address">Address</label>
+            <input type="text" id="broker-address" name="address" placeholder="Your Address" required>
+
+            <label for="broker-specialty">Specialty </label>
+            <input type="text" id="broker-specialty" name="specialty" placeholder="(e.g., Land Sales, Apartment Rentals)" required>
+
+            <button type="submit" class="form-submit-btn">SUBMIT REGISTRATION</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Post Requirement Modal -->
+<div class="modal-overlay" id="requirementFormModal" onclick="closeOnOutsideClick(event)">
+    <div class="modal-container">
+        <h3>Add Your Requirement Here</h3>
+        <form onsubmit="return validateRequirementForm(this)" class="app-form">
+            <label for="req-name">Your Full Name</label>
+            <input type="text" id="req-name" name="name" placeholder="Your Name" required>
+
+            <label for="broker-email">Email</label>
+            <input type="email" id="broker-email" name="email" placeholder="youremail@mail.com" >
+
+            <label for="req-whatsapp">Whatsapp Number (e.g., +94 7x xxx xxxx)</label>
+            <input type="tel" id="req-whatsapp" name="whatsapp" placeholder="+94 7x xxx xxxx" autocomplete="off" required>
+
+            <label for="req-details">Requirement Details </label>
+            <textarea id="req-details" name="details" rows="5" placeholder="(Type of property, location, budget, etc.)" required></textarea>
+
+            <button type="submit" class="form-submit-btn">SUBMIT REQUIREMENT</button>
+        </form>
+    </div>
+</div>
+
+<!-- Notifications-->
+<div id="messageBox" class="msg-box">
+    <div class="msg-icon"><i class="fa-solid fa-check-circle"></i></div>
+    <div class="msg-title" id="msgTitle">Success!</div>
+    <p class="msg-text" id="msgText">Your form has been submitted.</p>
+    <button class="msg-close-btn" onclick="closeMessageBox()">Close</button>
+</div>
 
 
 <script src="index.js"></script>
@@ -69,7 +163,7 @@
 
 
 
-    </div>
+</div>
 </body>
 </html>
 
