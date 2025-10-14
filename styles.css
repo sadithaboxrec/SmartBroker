@@ -56,21 +56,24 @@ body, html {
     align-items: flex-start; /* Move content to the left */
     gap: 40px;
     min-width: 0;
-    margin-left: -40px; /* Slightly more left */
+    /* margin-left: -40px;  */
 }
 
 .logo-box img {
-    width: 300px; /* Bigger logo */
+    width: 550px; /* Bigger logo */
     max-width: 100%;
     height: auto;
-    margin-bottom: 0;
+    margin-bottom: -30px;
+    margin-top: -100px;
+    margin-left: -40px;
+    margin-right: 0px;
 }
 
 .cta-buttons {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin-top: 0;
+    margin-top: -10px;
     width: 320px;
 }
 
@@ -106,12 +109,13 @@ body, html {
     box-shadow: var(--shadow-deep);
     color: var(--text-dark);
     padding: 38px 38px 28px 38px;
-    max-width: 580px;
+    max-width: 620px;
     min-width: 480px;
     box-shadow: var(--shadow-light);
     position: relative;
     font-size: 1.18em;
     margin-top: -38px;
+    
 }
 
 .about-title {
@@ -142,19 +146,28 @@ body, html {
     line-height: 1.5;
 }
 
+.tagline-m{
+    display: none;
+}
+
 .tagline {
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 400px; /* Move tagline further down */
-    left: 9%;
-    font-size: 2.7em;
+    top: 350px; /* Move tagline further down */
+    left: 19%;
+    font-size: 3.7em;
     margin: 80px 0;
     font-family: 'Brush Script MT', 'Bradley Hand', cursive;
     font-weight: normal;
     text-shadow: 1px 2px 8px #0007;
     letter-spacing: 1px;
     line-height: 1.2;
+}
+
+.tagline p {
+    margin: 0;
+    padding: 0;
 }
 
 .tagline b {
@@ -333,9 +346,10 @@ body, html {
     }
 
     .logo-box img {
-        width: 180px;
+        width: 350px;
+        height: 200px;
         display: block;
-        margin: 0 auto 12px auto; /* Center and space below */
+        margin: -30px auto 18px auto; /* Center and space below */
     }
 
     .cta-buttons {
@@ -344,7 +358,9 @@ body, html {
 
         width: 100vw;
         max-width: 320px;
-        margin: 0 auto;
+        /* margin: -40px auto 0 auto; */
+        margin-top: -30px;
+        margin-left: 30px;
         padding: 0 12px;
         gap: 24px;
         display: flex;
@@ -361,37 +377,38 @@ body, html {
         margin: 0;
     }
 
-    .right-box {
-        width: 100vw;
-        /* margin-top: 130px; */
-        padding-left: 0;
-        padding-right: 0;
-        /* margin-left: 10px;
-        margin-right: 10px; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  
 
     .about-box {
         max-width: 95vw;
         min-width: 0;
         padding: 38px 10px 28px 10px;
         margin-top: 50px;
-        margin-left: 5px;
-        margin-right: 5px;
-        font-size: 1.08em;
+        margin-left: 15px !important ;
+        margin-right: 15px !important;
+        font-size:0.70em;
     }
+      /* .about-box {
+        max-width: 95vw;
+        min-width: 0;
+        padding: 18px 8px 14px 8px;
+        margin-top: 18px;
+        font-size: 0.85em;
+    } */
 
     .about-title {
         left: 50%;
         transform: translateX(-50%);
         top: -22px;
         font-size: 1em;
-        padding: 7px 18px;
+        padding: 6px 14px;
     }
 
-    .tagline {
+    .about-box h3 {
+        margin-top: -20px;
+    }
+
+    /* .tagline {
         position: static;
         width: 100vw;
         text-align: center;
@@ -399,18 +416,58 @@ body, html {
         margin: 32px 0 0 0;
         line-height: 1.2;
         padding-bottom: 24px;
+    } */
+
+    .tagline {
+        display: none;  
     }
 
-    .footer {
+        .tagline-m {
+        position: static;
+        width: 100vw;
+        text-align: center;
+        font-size: 2em;
+        margin: 0 0 18px 0;
+        line-height: 1.2;
+        padding-bottom: 0;
+        font-family: 'Brush Script MT', cursive;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 2px 8px #0007;
+        display: block;
+
+        
+    } 
+
+  .tagline-m {
+        width: 100vw;
+        text-align: center;
+        margin: 0 0 18px 0;
+        padding-bottom: 0;
+        position: static;
+        display: block;
+    }
+
+
+
+    /* .taglinemobile-img {
+        display: block;
+        width: 360px;
+        height: 50px;
+        height: auto;
+        margin: 20px auto 18px auto;
+        animation: taglineFadeIn 1s ease-in;
+    } */
+
+    /* .footer {
         position: static;
         left: 0;
         bottom: 0;
         width: 100vw;
         flex-direction: column;
         gap: 8px;
-        /* padding: 18px 10px; */
         font-size: 1em;
-        margin-top: -1px;
+        margin-top: -10px;
         margin-bottom: 0;
         z-index: 10;
     }
@@ -432,7 +489,50 @@ body, html {
         justify-content: center;
         text-align: center;
         margin-top: 0;
+    } */
+
+
+    .footer {
+        position: static !important;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
     }
+    .footer-section {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .footer-section img,
+    .footer-section .footer-icon {
+        margin-right: 20px;
+        margin-left: 0;
+        align-self: flex-start;
+        flex-shrink: 0;
+    }
+    .footer-section-text {
+        text-align: left;
+        flex: 1;
+        min-width: 0;
+    }
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        flex: none;
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-center p,
+    .footer-right p{
+    margin-left: 35px;
+    }
+
 }
 
 
@@ -694,9 +794,27 @@ body, html {
     .content-wrapper {
         flex-grow: 1;
     }
+
+    .left-panel {
+        align-items: center;
+        min-width: 0;
+        gap: 20px;
+        margin-left: -40px;
+    }   
+
+    .about-box{
+        width: 500px;
+    }
+
+    .tagline {
+        font-size: 3.2em !important;
+        left: 20% !important;
+        top: 400px !important;
+    }
+
     .footer {
         position: static !important;
-        margin-bottom: 50px !important;
+        margin-bottom: 75px !important;
         margin-top: 0 !important;
     }
 
