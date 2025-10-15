@@ -62,7 +62,7 @@ function closeMessageBox() {
        // --- Phone formatting
 document.addEventListener('DOMContentLoaded', (event) => {
     
-    const prefix = "+94 "; 
+    const prefix = "+ "; 
 
     function applyPhoneFormat(inputElement) {
 
@@ -94,21 +94,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
 
             let digits = currentValue.substring(prefix.length).replace(/\D/g, '');
-            digits = digits.substring(0, 9); // Limit to 9 digits after +94
+            digits = digits.substring(0, 11); // Limit to 11 digits after +94
 
-            // Format the remaining digits with spaces: XX XXX XXXX (10 digits)
+            
             let formattedDigits = '';
             
             if (digits.length > 0) {
                 formattedDigits += digits.substring(0, 2); 
             }
             if (digits.length > 2) {
-                formattedDigits += ' ' + digits.substring(2, 5);
+                formattedDigits += ' ' + digits.substring(2, 4);
             }
-            if (digits.length > 5) {
-                formattedDigits += ' ' + digits.substring(5, 9);
+            if (digits.length > 4) {
+                formattedDigits += ' ' + digits.substring(4, 7);
             }
-            
+            if (digits.length > 7) {
+                formattedDigits += ' ' + digits.substring(7, 11);
+            }
+
             e.target.value = prefix + formattedDigits;
             e.target.setSelectionRange(e.target.value.length, e.target.value.length);
         });
