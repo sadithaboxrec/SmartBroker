@@ -151,11 +151,11 @@ body, html {
     display: none;
 }
 
-.tagline {
+/* .tagline {
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 350px; /* Move tagline further down */
+    top: 350px; 
     left: 19%;
     font-size: 3.7em;
     margin: 80px 0;
@@ -164,7 +164,7 @@ body, html {
     text-shadow: 1px 2px 8px #0007;
     letter-spacing: 1px;
     line-height: 1.2;
-}
+} */
 
 .tagline p {
     margin: 0;
@@ -174,6 +174,30 @@ body, html {
 .tagline b {
     font-family: inherit;
     font-weight: 900;
+}
+
+/* Desktop tagline image */
+.tagline {
+        width: 500px;   /* Keep current desktop width */
+    height: 90px; 
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 350px;
+    left: 19%;
+    margin: 80px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: #10b981 15px solid;
+}
+
+.tagline-img {
+    width: 500px;   /* Keep current desktop width */
+    height: 90px;   /* Keep current desktop height */
+    object-fit: contain;
+    display: block;
 }
 
 .footer {
