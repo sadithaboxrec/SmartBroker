@@ -138,7 +138,9 @@ function validateBrokerForm(form) {
     // Regular Expression for NIC: 9 digits followed by V or X, OR 12 digits (new format)
     const nicRegex = /^[0-9]{9}[vVxX]$|^[0-9]{12}$/;
     // Permissive regex for phone number that handles the spacing: +94 XX XXX XXXX
-    const phoneRegex = /^\+94\s\d{2}\s\d{3}\s\d{4}$/; 
+    // const phoneRegex = /^\+94\s\d{2}\s\d{3}\s\d{4}$/; 
+    // const phoneRegex = /^\+\s94\d{2}\s\d{3}\s\d{4}$/;
+
     // Basic email regex (built-in HTML validation is usually better, but this acts as a final check)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
@@ -159,12 +161,23 @@ function validateBrokerForm(form) {
     }
 
 
-    const cleanContactNo = contactNo.replace(/\s/g, ''); // remove spaces for length check
-    if (cleanContactNo.length !== 12 || !contactNo.startsWith('+94 ')) { 
-        showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 9 digits (e.g., +94 7X XXX XXXX).', true);
-        return false;
-    }
+    // const cleanContactNo = contactNo.replace(/\s/g, ''); // remove spaces for length check
+    // if (cleanContactNo.length !== 11 || !contactNo.startsWith('+ ')) { 
+    //     showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 11 digits (e.g., +94 7X XXX XXXX).', true);
+    //     return false;
+    // }
 
+//     if (!phoneRegex.test(contactNo)) {
+//     showMessage('Validation Error', 'Please enter a valid WhatsApp number in the format: +94 XX XXX XXXX.', true);
+//     return false;
+// }
+
+const phoneRegex = /^\+\s94\s\d{2}\s\d{3}\s\d{4}$/;
+
+if (!phoneRegex.test(contactNo)) {
+    showMessage('Validation Error', 'Please enter a valid WhatsApp number in the format: + 94 XX XXX XXXX.', true);
+    return false;
+}
 
     if (district === "") {
         showMessage('Validation Error', 'Please select your District from the dropdown menu.', true);
@@ -207,7 +220,9 @@ function validateRequirementForm(form) {
     const whatsapp = form.elements['whatsapp'].value.trim();
     const details = form.elements['details'].value.trim();
 
-    const phoneRegex = /^\+94\s\d{2}\s\d{3}\s\d{4}$/; 
+    // const phoneRegex = /^\+94\s\d{2}\s\d{3}\s\d{4}$/; 
+    const phoneRegex = /^\+\s94\s\d{2}\s\d{3}\s\d{4}$/;
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
 
@@ -221,12 +236,17 @@ function validateRequirementForm(form) {
         return false;
     }
 
-    const cleanWhatsapp = whatsapp.replace(/\s/g, '');
-    if (cleanWhatsapp.length !== 12 || !whatsapp.startsWith('+94 ')) { 
-        showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 9 digits (e.g., +94 7X XXX XXXX).', true);
-        return false;
-    }
+    // const cleanWhatsapp = whatsapp.replace(/\s/g, '');
+    // if (cleanWhatsapp.length !== 12 || !whatsapp.startsWith('+94 ')) { 
+    //     showMessage('Validation Error', 'Please enter a complete WhatsApp number, starting with +94 and 9 digits (e.g., +94 7X XXX XXXX).', true);
+    //     return false;
+    // }
     
+    if (!phoneRegex.test(whatsapp)) {
+    showMessage('Validation Error', 'Please enter a valid WhatsApp number in the format: + 94 XX XXX XXXX.', true);
+    return false;
+}
+
 
     if (details.length < 15) {
         showMessage('Validation Error', 'Please provide more details about your requirement (minimum 15 characters).', true);

@@ -427,6 +427,7 @@ body, html {
 
     .about-box h3 {
         margin-top: -20px;
+        text-align: center;
     }
 
     /* .tagline {
