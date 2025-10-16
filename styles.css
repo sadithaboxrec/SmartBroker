@@ -474,26 +474,28 @@ body, html {
         display: block;
     } */
 
-    .tagline-m {
-        position: static;
-        width: 100vw;
-        margin: -20px 0px -18px 75px;
-        line-height: 1.2;
-        padding-bottom: 0;
-        display: block;
-        
-    } 
+.tagline-m {
+    position: static;
+    width: 100vw;
+    line-height: 1.2;
+    padding-bottom: 0;
+    display: block;
+    text-align: center; /* centers the image inside */
+    margin: 0; /* removes the side offset */
+}
 
- .tagline-mobile-img {
-        /* width: 100vw; */
-        width: 350px;
-        height: 140px;
-        text-align: center;
-        margin: 0 0 18px 0;
-        padding-bottom: 0;
-        position: static;
-        display: block;
-    }
+.tagline-mobile-img {
+    width: 100%;
+    max-width: 350px; /* limit maximum width */
+    height: auto; /* keeps proportions */
+    margin: 0 auto 18px auto; /* centers horizontally */
+    padding-bottom: 0;
+    position: static;
+    display: block;
+}
+
+
+    
 
 
 
@@ -553,8 +555,8 @@ body, html {
         align-items: center;
     }
     .footer-section img {
-        margin-right: 20px;
-        margin-left: 0;
+        margin-right: 5px;
+        margin-left: 20px;
         align-self: flex-start;
         flex-shrink: 0;
     }
